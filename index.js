@@ -16,20 +16,20 @@ const client = new MongoClient(uri, {
     strict: true,
     deprecationErrors: true,
   },
-  useNewUriParser: true,
-  useUniFiedTopology: true,
-  maxPoolSize: 10,
+  // useNewUriParser: true,
+  // useUniFiedTopology: true,
+  // maxPoolSize: 10,
 });
 
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect((err) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-    });
+    // await client.connect((err) => {
+    //   if (err) {
+    //     console.error(err);
+    //     return;
+    //   }
+    // });
     // await client.connect();
     const coffeeCollection = client.db("coffeeDB").collection("coffee");
     app.get("/coffees", async (req, res) => {
